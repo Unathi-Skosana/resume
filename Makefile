@@ -2,9 +2,9 @@
 
 all: prepare main release preview
 
-main: build/edelgas-resume.pdf
+main: build/resume.pdf
 
-build/edelgas-resume.pdf: edelgas-resume.tex
+build/resume.pdf: resume.tex
 	latexmk -f -quiet -xelatex -output-directory="./build"
 
 preview:

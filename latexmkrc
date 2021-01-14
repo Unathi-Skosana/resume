@@ -1,4 +1,4 @@
-@default_files = ('edelgas-resume.tex');
+@default_files = ('resume.tex');
 
 $pdflatex= 'xelatex %O -synctex=1 --shell-escape %S';
 $pdf_mode = 5;
