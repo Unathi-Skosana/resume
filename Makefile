@@ -1,30 +1,21 @@
-BUILD := \
-	resume \
+.PHONY: all clean prepare main release preview
 
+all: prepare main release preview
 
-DEPS := \
-	awesome-cv.cls \
-	fontawesome.sty \
+main: build/edelgas-resume.pdf
 
+build/edelgas-resume.pdf: edelgas-resume.tex
+	latexmk -f -quiet -xelatex -output-directory="./build"
 
-LATEX  := latexmk
-
-LATEXOPTS := -f -pdf -lualatex -use-make
-TARGETS := $(patsubst %, %.pdf, $(BUILD))
-
-# phony targets
-
-all: $(TARGETS)
+preview:
+	latexmk -pvc
 
 clean:
-	rm -rf *.pdf *.aux *.bbl *.blg *.log *.nav *.out *.snm *.toc
+	rm -rf build release
+	latexmk -c
 
-.PHONY: all clean
+prepare:
+	mkdir -p build release
 
-# main targets
-
-resume.pdf: resume.tex $(DEPS)
-	$(eval SRC_$@ = $(patsubst %.tex, %, $<))
-	$(LATEX) $(LATEXOPTS) $(SRC_$@)
-	$(LATEX) $(LATEXOPTS) $(SRC_$@)
-	$(LATEX) $(LATEXOPTS) $(SRC_$@)
+release:
+	cp build/*.pdf release

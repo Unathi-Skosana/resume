@@ -1,0 +1,115 @@
+\documentclass{edelgas-resume}
+
+\setmainfont[
+ Ligatures=TeX,
+ UprightFont={CooperHewitt-Book},
+ BoldFont={CooperHewitt-Bold}, 
+ ItalicFont={CooperHewitt-BookItalic},
+ BoldItalicFont={CooperHewitt-BoldItalic},
+ ]{Cooper Hewitt} %A Times New Roman Alternative
+
+\setsansfont[
+ Ligatures=TeX,
+ UprightFont={FiraSans-Book},
+ BoldFont={FiraSans-Bold}, 
+ ItalicFont={FiraSans-BookItalic},
+ BoldItalicFont={FiraSans-BoldItalic},
+ Scale=MatchLowercase
+]{Fira Sans} %A Helvetica Alternative
+
+%Custom Variables
+\newcommand*{\name}{
+    Unathi K. Skosana
+}
+
+%if desired, this will create a really nice customized footer
+\newcommand{\foot}{
+    %{\name} --- \thepage\ of \pageref{LastPage}
+    Edelgas Résumé --- Page \thepage\ of \pageref{LastPage}
+}
+
+\begin{document}
+    %Header
+    \namehead %prints your name
+    \address{Banghoek Rd \& Bosman St, Stellenbosch, South Africa}{(+27) 815624 802}{ukskosana@gmail.com} %your address
+
+    %Education
+    \sectionheading{Education}
+
+    \organization{Stellenbosch University}{Western Cape, South Africa}{2016-Present}
+    \begin{position}{}{}
+        \item Bachelor of Science degree in theoretical physics with interests
+            in mathematics and computer science.
+        \item Bachelor of Science Honours degree in theoretical physics with
+            a focus on quantum computing
+        \item Ongoing Master dissertation on quantum computing
+    \end{position}
+
+    \organization{Sovetjheza High School}{Mpumalanga, South Africa}{2013-15}
+    \begin{position}{}{}
+        \item Emphasis on the natural sciences
+        \item Received multiple accolades for academic achievements.
+    \end{position}
+
+
+    \organization{Summer schools, courses \& conferences}{}{2019-Present}
+    \begin{position}{}{}
+        \item Quantum Africa V
+        \item WitsQ Summer School 
+        \item Qiskitc Camp Africa 19
+        \item Qiskit Global Summer School 20
+    \end{position}
+
+    %Business Experience
+    \sectionheading{Research experience}
+
+    \organization{Stellenbosch University}{Western Cape, South Africa}{2019-Present}
+    \begin{position}{Undergraduate, Honours, and Masters research projects}{} 
+        \item Research in theoretical and experimental on quantum computing
+            for my bachelor thesis and ongoing masters thesis.
+    \end{position}
+
+
+    %Other Work Experience
+    \sectionheading{Awards \& Grants}
+    \organization{Grants}{}{2017-Present}
+    \begin{position}{}{}
+        \item Masters Research Grant, CSIR
+        \item Merit Bursary, Stellenbosch University
+        \item Undergraduate Fund, SKA Undergraduate Programmer
+    \end{position}
+
+    \organization{Awards}{}{2016-Present}
+    \begin{position}{}{}
+        \item Recognized for academic achievements in undergraduate, Department of physics, Stellenbosch University
+        \item 1st place poster presentation, WitsQ summer school, Wits
+            University
+        \item Member, Golden Key International Honor Society
+    \end{position}
+
+
+
+    %Skills
+    \sectionheading{Skills}
+    \vspace{-1em}
+    \textbf{Software}: GNU/Linux, Latex, Vim, Git\newline
+    \textbf{Machine Languages}: Python, C, Bash, Go, Javascript\newline
+    \textbf{Human Languages}: IsiNdebele (mother tongue), English and a student of Japanese.
+    \vspace{1.5em}
+
+    %Coursework
+    \sectionheading{Coursework}
+    \vspace{-1.0em}
+    \begin{position}{Selected coursework}{}
+        \item {Quantum Physics (4 courses)}
+        \item {Electromagnetism (4 courses)}
+        \item {Computational Physics (3 courses)}
+        \item {Special relativity (2 courses)}
+        \item {Statistical Physics (3 courses)}
+        \item {Real/Complex Analysis (3 courses)}
+        \item {Probability and Statistics (2 course)}
+        \item {Applied Mathematics (2 courses)} 
+        \item {Computer Science (3 courses)}
+    \end{position}
+
+\end{document}
