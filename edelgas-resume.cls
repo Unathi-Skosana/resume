@@ -1,6 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{edelgas-resume}[2016/02/14 Edelgas Résumé Class]
-\LoadClass[10pt]{article}
+\LoadClass[8pt]{article}
 
 % Standards
 \RequirePackage{xunicode}
@@ -23,27 +23,27 @@
 	}
 
 % Name Section
-\DeclareTextFontCommand{\namefont}{\sffamily\addfontfeature{LetterSpace=20}\fontsize{20}{30}\selectfont}
+\DeclareTextFontCommand{\namefont}{\sffamily\addfontfeature{LetterSpace=20}\fontsize{10}{20}\selectfont}
 \newcommand*{\namehead}{
 	\centering\namefont{
-		\MakeUppercase\name}
-	\par
-	\vspace{1em}
+		\MakeUppercase\name
+        }
+    \par
 	}
 
 % Address Section
-\DeclareTextFontCommand{\addressfont}{\centering\sffamily\addfontfeature{LetterSpace=20}\fontsize{10}{12}\selectfont}
+\DeclareTextFontCommand{\addressfont}{\centering\sffamily\addfontfeature{LetterSpace=20}\fontsize{6}{10}\selectfont}
 \newenvironment*{address}[3]{
-	\addressfont{\MakeUppercase{#1}} %see above
+	\addressfont{#1} %see above
 	\par
 	\vspace{0.3em}
-	\addressfont{\MakeUppercase{#2 \hspace{1em} #3}}
+	\addressfont{#2 \hspace{0.25em}|\hspace{0.25em} #3}
 	\par
 	\vspace{1.25em}
 }
 
 % Section Headings
-\DeclareTextFontCommand{\headingfont}{\sffamily\bfseries\addfontfeature{LetterSpace=5}\fontsize{8}{10}\selectfont} 
+\DeclareTextFontCommand{\headingfont}{\sffamily\bfseries\addfontfeature{LetterSpace=5}\fontsize{6}{10}\selectfont} 
 \newenvironment*{sectionheading}[1]{
 	\vspace{-0.75em}
 	\raggedright\hrulefill\par
@@ -56,11 +56,12 @@
 % Company Name, Location, Dates
 \makeatletter
 	\newenvironment*{organization}[3]{
+        \fontsize{8}{10}\selectfont
 		\vspace*{-0.75em}
 		\raggedright
-		{\Large #1{\@ifmtarg{#2}{}{,}}} 
+		{#1{\@ifmtarg{#2}{}{,}}} 
 		#2
-		\hfill {\large #3}
+		\hfill {#3}
 		\par
 		\vspace{0.5em}
 	}

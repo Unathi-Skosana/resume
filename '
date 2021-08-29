@@ -1,6 +1,5 @@
 \documentclass{edelgas-resume}
 \usepackage{hyperref}
-\usepackage{csquotes}
 
 \setmainfont[
  Ligatures=TeX,
@@ -33,7 +32,7 @@
 \begin{document}
     %Header
     \namehead %prints your name
-    \address{}{\href{mailto:unathiskosana@protonmail.com}{unathiskosana@protonmail.com}}{\href{https://untitld.xyz}{untitld.xyz}} %your address
+    \address{Banghoek Rd \& Bosman St, Stellenbosch, South Africa}{(+27) 815624 802}{ukskosana@gmail.com} %your address
 
     %Education
     \sectionheading{Education}
@@ -49,23 +48,40 @@
     \sectionheading{Preprints \& Publications}
     \organization{Publications}{}{2021-Present}
     \begin{position}{}{}
-    \item Unathi Skosana and Mark Tame \enquote{Demonstration of Shor’s factoring algorithm for N = 21 on IBM quantum processors}. In: \emph{Sci Rep} (Aug 2021). DOI: \href{https://doi.org/10.1038/s41598-021-95973-w}{10.1038/10.1038/s41598-021-95973-w}. arXiv: \href{https://arxiv.org/abs/2103.13855}{2013.13855 [quant-ph]}
+    \item Skosana, U., Tame, M. \emph{Demonstration of Shor’s factoring algorithm for N = 21 on IBM quantum processors}. Sci Rep 11, 16599 (2021). https://doi.org/10.1038/s41598-021-95973-w
     \end{position}
 
-    \sectionheading{Talks \& Posters}
-    \organization{Posters}{}{2019-Present}
+
+    \organization{Talks \& posters}{}{2019-Present}
     \begin{position}{}{}
         \item Quantum Africa V
         \item WitsQ Summer School 
-        \item SAIP2021
+        \item SAIP 2021
     \end{position}
 
-    \sectionheading{Grants}
+
+    %Other Work Experience
+    \sectionheading{Grants \& Recognition}
     \organization{Grants}{}{2017-Present}
     \begin{position}{}{}
         \item Masters Research Grant, CSIR
         \item Merit Bursary, Stellenbosch University
-        \item Undergraduate Fund, SKA Undergraduate Programme
+        \item Undergraduate Fund, SKA Undergraduate Programmer
     \end{position}
+
+    \organization{Awards}{}{2016-Present}
+    \begin{position}{}{}
+        \item Recognized for academic achievements in undergraduate, Department of physics, Stellenbosch University
+   \end{position}
+
+
+
+    %Skills
+    \sectionheading{Skills}
+    \vspace{-1em}
+    \textbf{Software}: GNU/Linux, Latex, Vim, Git\newline
+    \textbf{Machine Languages}: Python, C, Bash, Go, Javascript\newline
+    \textbf{Human Languages}: IsiNdebele (mother tongue) and English.
+    \vspace{1.5em}
 
 \end{document}
