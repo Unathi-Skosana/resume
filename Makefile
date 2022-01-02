@@ -5,7 +5,7 @@ all: prepare main release preview
 main: build/resume.pdf
 
 build/resume.pdf: resume.tex
-	latexmk -f -quiet -xelatex -output-directory="./build"
+	latexmk -f -quiet -xelatex -output-directory="./build" -interaction=nonstopmode
 
 preview:
 	latexmk -pvc

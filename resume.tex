@@ -1,23 +1,33 @@
 \documentclass{edelgas-resume}
+
+\usepackage{color}
+\definecolor{pinegreen}{rgb}{0.0, 0.47, 0.44}
+\definecolor{darkred}{RGB}{157, 16, 45}
+
 \usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=pinegreen, urlcolor=pinegreen, citecolor=pinegreen, linktocpage=true, breaklinks=true}
+
 \usepackage{csquotes}
 
-\setmainfont[
- Ligatures=TeX,
- UprightFont={CooperHewitt-Book},
- BoldFont={CooperHewitt-Bold}, 
- ItalicFont={CooperHewitt-BookItalic},
- BoldItalicFont={CooperHewitt-BoldItalic},
- ]{Cooper Hewitt} %A Times New Roman Alternative
+\setmainfont{AJensonPro-Regular}
+\setsansfont{Helvetica}
 
-\setsansfont[
- Ligatures=TeX,
- UprightFont={FiraSans-Book},
- BoldFont={FiraSans-Bold}, 
- ItalicFont={FiraSans-BookItalic},
- BoldItalicFont={FiraSans-BoldItalic},
- Scale=MatchLowercase
-]{Fira Sans} %A Helvetica Alternative
+% \setmainfont[
+%  Ligatures=TeX,
+%  UprightFont={CooperHewitt-Book},
+%  BoldFont={CooperHewitt-Bold}, 
+%  ItalicFont={CooperHewitt-BookItalic},
+%  BoldItalicFont={CooperHewitt-BoldItalic},
+%  ]{Cooper Hewitt} %A Times New Roman Alternative
+
+% \setsansfont[
+%  Ligatures=TeX,
+%  UprightFont={FiraSans-Book},
+%  BoldFont={FiraSans-Bold}, 
+%  ItalicFont={FiraSans-BookItalic},
+%  BoldItalicFont={FiraSans-BoldItalic},
+%  Scale=MatchLowercase
+% ]{Fira Sans} %A Helvetica Alternative
 
 %Custom Variables
 \newcommand*{\name}{
@@ -25,10 +35,6 @@
 }
 
 %if desired, this will create a really nice customized footer
-\newcommand{\foot}{
-    %{\name} --- \thepage\ of \pageref{LastPage}
-    Page \thepage\ of \pageref{LastPage}
-}
 
 \begin{document}
     %Header
@@ -52,6 +58,11 @@
     \item Unathi Skosana and Mark Tame \enquote{Demonstration of Shor’s factoring algorithm for N = 21 on IBM quantum processors}. In: \emph{Sci Rep} (Aug 2021). DOI: \href{https://doi.org/10.1038/s41598-021-95973-w}{10.1038/10.1038/s41598-021-95973-w}. arXiv: \href{https://arxiv.org/abs/2103.13855}{2013.13855 [quant-ph]}
     \end{position}
 
+	\organization{Preprints \& Proceedings}{}{2021-Present}
+    \begin{position}{}{}
+	\item Unathi Skosana and Mark Tame \enquote{On the advantages of relative Toffoli gates}. Submitted to SAIP2021 conference \href{https://events.saip.org.za/event/206/papers/7011/files/3773-on_the_advantages_of_relative_toffoli_gates.pdf}{7011.3773}
+    \end{position}
+
     \sectionheading{Talks \& Posters}
     \organization{Posters}{}{2019-Present}
     \begin{position}{}{}
@@ -60,12 +71,21 @@
         \item SAIP2021
     \end{position}
 
-    \sectionheading{Grants}
+	\sectionheading{Grants \& Recognition}
     \organization{Grants}{}{2017-Present}
     \begin{position}{}{}
         \item Masters Research Grant, CSIR
         \item Merit Bursary, Stellenbosch University
+		\item Recognized as a undergraduate top achiever by the physics department at Stellenbosch University
         \item Undergraduate Fund, SKA Undergraduate Programme
     \end{position}
+
+
+	\sectionheading{Service}
+    \organization{Teaching}{}{2018-Present}
+    \begin{position}{}{}
+        \item Teaching assistant for physics 114/144 at Stellenbosch University
+    \end{position}
+
 
 \end{document}

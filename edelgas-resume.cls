@@ -13,17 +13,14 @@
 \RequirePackage{enumitem}
 
 % Footer
-\RequirePackage{lastpage}
 \RequirePackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
-\fancyfoot[C]{
-	\sffamily\addfontfeature{LetterSpace=20}\selectfont\MakeUppercase\foot
-	}
+\fancyfoot[C]{}
 
 % Name Section
-\DeclareTextFontCommand{\namefont}{\sffamily\addfontfeature{LetterSpace=20}\fontsize{10}{20}\selectfont}
+\DeclareTextFontCommand{\namefont}{\sffamily\addfontfeature{LetterSpace=5}\fontsize{20}{30}\selectfont}
 \newcommand*{\namehead}{
 	\centering\namefont{
 		\MakeUppercase\name
@@ -32,7 +29,7 @@
 	}
 
 % Address Section
-\DeclareTextFontCommand{\addressfont}{\centering\sffamily\addfontfeature{LetterSpace=20}\fontsize{6}{10}\selectfont}
+\DeclareTextFontCommand{\addressfont}{\centering\sffamily\addfontfeature{LetterSpace=20}\fontsize{8}{10}\selectfont}
 \newenvironment*{address}[3]{
 	\addressfont{#1} %see above
 	\par
@@ -43,11 +40,10 @@
 }
 
 % Section Headings
-\DeclareTextFontCommand{\headingfont}{\sffamily\bfseries\addfontfeature{LetterSpace=5}\fontsize{6}{10}\selectfont} 
+\DeclareTextFontCommand{\headingfont}{\sffamily\bfseries\addfontfeature{LetterSpace=5}\fontsize{10}{10}\selectfont} 
 \newenvironment*{sectionheading}[1]{
 	\vspace{-0.75em}
-	\raggedright\hrulefill\par
-	\vspace{-0.25em}
+	\raggedright
 	\headingfont{\textbf{\MakeUppercase{#1}}}
 	\vspace{0.75em}
 	\newline\par
@@ -56,10 +52,10 @@
 % Company Name, Location, Dates
 \makeatletter
 	\newenvironment*{organization}[3]{
-        \fontsize{8}{10}\selectfont
+        \fontsize{9}{10}\selectfont
 		\vspace*{-0.75em}
 		\raggedright
-		{#1{\@ifmtarg{#2}{}{,}}} 
+		{\sffamily {#1{\@ifmtarg{#2}{}{,}}}}
 		#2
 		\hfill {#3}
 		\par
