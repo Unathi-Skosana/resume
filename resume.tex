@@ -1,35 +1,82 @@
-\documentclass{edelgas-resume}
+\documentclass[12pt,letterpaper]{report}
 
+\usepackage{fontspec}
+\usepackage[T1]{fontenc} % output T1 font encoding (8-bit) for accented characters as single glyph
+\usepackage[strict,autostyle]{csquotes} % smart and nestable quote marks
+\usepackage[USenglish]{babel} % regionalize hyphens, quote marks, etc automatically
+\usepackage{datetime} % enable formatting of date output
+\usepackage{tabto}    % make nice tabbing
+\usepackage{hyperref} % enable hyperlinks and pdf metadata
+\usepackage{geometry} % manually set page margins
+\usepackage{enumitem} % enumerate with [resume] option
+\usepackage{titlesec} % allow custom section fonts
+
+\usepackage{setspace} % custom line spacing
+
+% how far to tab for list items with left-aligned date: different fonts need different widths
+\newcommand{\listtabwidth}{1.7cm}
+
+% define font to use as document's title
+\newcommand{\namefont}[1]{{\normalfont\bfseries\Huge{#1}}}
+
+% set section heading fonts and before/after spacing
+\titleformat{\section}{\sffamily\small\bfseries\uppercase}{}{}{}{}
+\titlespacing{\section}{0pt}{30pt plus 4pt minus 4pt}{8pt plus 2pt minus 2pt}
+
+% set subsection heading fonts and before/after spacing
+\titleformat{\subsection}{\sffamily\footnotesize\bfseries}{}{}{}{}
+\titlespacing{\subsection}{0pt}{16pt plus 4pt minus 4pt}{4pt plus 2pt minus 2pt}
+
+% set page margins (assumes letter paper)
+\geometry{body={6.5in, 9.0in},
+    left=1.0in,
+    top=1.0in}
+
+% prevent paragraph indentation
+\setlength\parindent{0em}
+
+% set line spacing
+\setstretch{0.9}
+
+% define space between list items
+\newcommand{\listitemspace}{0.25em}
+
+% make unordered lists without bullets and use compact spacing
+\renewenvironment{itemize}
+{\begin{list}{}{\setlength{\leftmargin}{0em}
+                \setlength{\parskip}{0em}
+                \setlength{\itemsep}{\listitemspace}
+                \setlength{\parsep}{\listitemspace}}}
+{\end{list}}
+
+% make tabbed lists so content is left-aligned next to years
+\TabPositions{\listtabwidth}
+\newlist{tablist}{description}{3}
+\setlist[tablist]{leftmargin=\listtabwidth,
+    labelindent=0em,
+    topsep=0em,
+    partopsep=0em,
+    itemsep=\listitemspace,
+    parsep=\listitemspace,
+    font=\normalfont}
+
+% print only the month and year when using \today
+\newdateformat{monthyeardate}{\monthname[\THEMONTH] \THEYEAR}
+
+% custom colors for url & email links.
 \usepackage{color}
 \definecolor{pinegreen}{rgb}{0.0, 0.47, 0.44}
 \definecolor{darkred}{RGB}{157, 16, 45}
 
+%
 \usepackage{hyperref}
 \hypersetup{colorlinks=true, linkcolor=pinegreen, urlcolor=pinegreen, citecolor=pinegreen, linktocpage=true, breaklinks=true}
 
-\usepackage{csquotes}
-
+% Typography
 \setmainfont{AJensonPro-Regular}
 \setsansfont{Helvetica}
 
-% \setmainfont[
-%  Ligatures=TeX,
-%  UprightFont={CooperHewitt-Book},
-%  BoldFont={CooperHewitt-Bold}, 
-%  ItalicFont={CooperHewitt-BookItalic},
-%  BoldItalicFont={CooperHewitt-BoldItalic},
-%  ]{Cooper Hewitt} %A Times New Roman Alternative
-
-% \setsansfont[
-%  Ligatures=TeX,
-%  UprightFont={FiraSans-Book},
-%  BoldFont={FiraSans-Bold}, 
-%  ItalicFont={FiraSans-BookItalic},
-%  BoldItalicFont={FiraSans-BoldItalic},
-%  Scale=MatchLowercase
-% ]{Fira Sans} %A Helvetica Alternative
-
-%Custom Variables
+%What is your name?
 \newcommand*{\name}{
     Unathi K. Skosana
 }
@@ -37,55 +84,61 @@
 %if desired, this will create a really nice customized footer
 
 \begin{document}
-    %Header
-    \namehead %prints your name
-    \address{}{\href{mailto:unathiskosana@protonmail.com}{unathiskosana@protonmail.com}}{\href{https://untitld.xyz}{untitld.xyz}} %your address
+	\raggedright{}
 
-    %Education
-    \sectionheading{Education}
+    % display your name as the document title
+    \namefont{\name}
 
-    \organization{Stellenbosch University}{Western Cape, South Africa}{2016-Present}
-    \begin{position}{}{}
-        \item Bachelor of Science degree in theoretical physics with interests
-            in mathematics and computer science.
-        \item Bachelor of Science Honours degree in theoretical physics
-        \item Currently enrolled for a master's degree in theoretical physics
-    \end{position}
-
-    \sectionheading{Preprints \& Publications}
-    \organization{Publications}{}{2021-Present}
-    \begin{position}{}{}
-    \item Unathi Skosana and Mark Tame \enquote{Demonstration of Shor’s factoring algorithm for N = 21 on IBM quantum processors}. In: \emph{Sci Rep} (Aug 2021). DOI: \href{https://doi.org/10.1038/s41598-021-95973-w}{10.1038/10.1038/s41598-021-95973-w}. arXiv: \href{https://arxiv.org/abs/2103.13855}{2013.13855 [quant-ph]}
-    \end{position}
-
-	\organization{Preprints \& Proceedings}{}{2021-Present}
-    \begin{position}{}{}
-	\item Unathi Skosana and Mark Tame \enquote{On the advantages of relative Toffoli gates}. Submitted to SAIP2021 conference \href{https://events.saip.org.za/event/206/papers/7011/files/3773-on_the_advantages_of_relative_toffoli_gates.pdf}{7011.3773}
-    \end{position}
-
-    \sectionheading{Talks \& Posters}
-    \organization{Posters}{}{2019-Present}
-    \begin{position}{}{}
-        \item Quantum Africa V
-        \item WitsQ Summer School 
-        \item SAIP2021
-    \end{position}
-
-	\sectionheading{Grants \& Recognition}
-    \organization{Grants}{}{2017-Present}
-    \begin{position}{}{}
-        \item Masters Research Grant, CSIR
-        \item Merit Bursary, Stellenbosch University
-		\item Recognized as a undergraduate top achiever by the physics department at Stellenbosch University
-        \item Undergraduate Fund, SKA Undergraduate Programme
-    \end{position}
+    % affiliation and contact info blocks
+    \vspace{1em}
+    \begin{minipage}[t]{0.700\textwidth}
+        % current primary affiliation, left-aligned
+        Department of Physics \\
+		Stellenbosch University
+    \end{minipage}
+    \begin{minipage}[t]{0.295\textwidth}
+        % contact info details, right-aligned
+        \flushright{}
+        \href{mailto:ukskosana@protonmail.com}{ukskosana@protonmail.com} \\
+        \href{https://untitld.xyz}{untitld.xyz}
+    \end{minipage}
 
 
-	\sectionheading{Service}
-    \organization{Teaching}{}{2018-Present}
-    \begin{position}{}{}
-        \item Teaching assistant for physics 114/144 at Stellenbosch University
-    \end{position}
+  \section*{Education}
+    \begin{tablist}
+        \item[MSc.]  \tab{}Quantum Computing and Quantum Information, Stellenbosch University, 2020-
+        \item[Hons.]  \tab{}Theoretical Physics~\textit{cum laude}, Stellenbosch University, 2019
+        \item[BSc.]  \tab{}Theoretical Physics~\textit{cum laude}, Stellenbosch University, 2018
+    \end{tablist}
 
+	\section*{Preprints n' Publications}
+	\begin{tablist}
+   \item \tab{}Unathi Skosana and Mark Tame \enquote{Demonstration of Shor’s factoring algorithm for N = 21 on IBM quantum processors}. In: \textit{Sci Rep} (Aug 2021). DOI: \href{https://doi.org/10.1038/s41598-021-95973-w}{10.1038/10.1038/s41598-021-95973-w}. arXiv: \href{https://arxiv.org/abs/2103.13855}{2013.13855 [quant-ph]}
+	\item \tab{}Unathi Skosana and Mark Tame \enquote{On the advantages of relative Toffoli gates}. Submitted to \textit{SAIP2021} conference \href{https://events.saip.org.za/event/206/papers/7011/files/3773-on_the_advantages_of_relative_toffoli_gates.pdf}{7011.3773}
+	\end{tablist}
+
+
+	\section*{Talks n' Posters}
+
+	\begin{tablist}
+       \item[2021] \tab{}\enquote{On the advantages of relative phase Toffolis} SAIP2021. 28 July
+	   \item[2019] \tab{}\enquote{Modeling of Measurement-based Quantum Computing on IBM Q Experience Devices} Quantum Africa V conference. 5 Sept 
+       \item[2019] \tab{}\enquote{Modeling of Measurement-based Quantum Computing on IBM Q Experience Devices} WitsQ Summer School. 10 Dec 
+	\end{tablist}
+
+	\section*{Grants n' Recognition}
+
+	\begin{tablist}
+		\item[2020-] \tab{}Masters Research Grant, CSIR
+		\item[2020] \tab{}Recognized as a undergraduate top achiever by the physics department at Stellenbosch University
+		\item[2019] \tab{}Merit Bursary, Stellenbosch University
+		\item[2018] \tab{}Undergraduate Fund, SKA Undergraduate Programme
+	\end{tablist}
+
+
+	\section*{Service}
+	\begin{tablist}
+		\item[2018-] \tab{} Teaching assistant for physics 114/144 at Stellenbosch University
+	\end{tablist}
 
 \end{document}
