@@ -10,7 +10,6 @@
 \usepackage{geometry} % manually set page margins
 \usepackage{enumitem} % enumerate with [resume] option
 \usepackage{titlesec} % allow custom section fonts
-
 \usepackage{setspace} % custom line spacing
 
 % how far to tab for list items with left-aligned date: different fonts need different widths
@@ -64,21 +63,21 @@
 \newdateformat{monthyeardate}{\monthname[\THEMONTH] \THEYEAR}
 
 % custom colors for url & email links.
-\usepackage{color}
-\definecolor{pinegreen}{rgb}{0.0, 0.47, 0.44}
-\definecolor{darkred}{RGB}{157, 16, 45}
+\usepackage{xkcdcolors}
 
 %
 \usepackage{hyperref}
-\hypersetup{colorlinks=true, linkcolor=pinegreen, urlcolor=pinegreen, citecolor=pinegreen, linktocpage=true, breaklinks=true}
+\hypersetup{colorlinks=true, linkcolor=xkcdDeepSkyBlue, urlcolor=xkcdDeepSkyBlue,
+citecolor=xkcdDeepSkyBlue, linktocpage=true, breaklinks=true}
 
-% Typography
-\setmainfont{AJensonPro-Regular}
-\setsansfont{Helvetica}
+% Set fonts
+%\defaultfontfeatures{Mapping=tex-text}
+\setmainfont{Crimson Text}
+\setsansfont{Roboto Slab}
 
 %What is your name?
 \newcommand*{\name}{
-    Unathi K. Skosana
+    Unathi Koketso Skosana
 }
 
 %if desired, this will create a really nice customized footer
@@ -93,28 +92,38 @@
     \vspace{1em}
     \begin{minipage}[t]{0.700\textwidth}
         % current primary affiliation, left-aligned
-        Department of Physics \\
-		Stellenbosch University
+        Department of Physics, Stellenbosch University
     \end{minipage}
     \begin{minipage}[t]{0.295\textwidth}
         % contact info details, right-aligned
-        \flushright{}
-        \href{mailto:ukskosana@protonmail.com}{ukskosana@protonmail.com} \\
-        \href{https://untitld.xyz}{untitld.xyz}
+        %\flushright{}
+        \href{https://unathi.dev}{Website} \\
+        \href{https://github.com/Unathi-Skosana}{Github} \\
+        \href{mailto:ukskosana@gmail.com}{ukskosana at gmail dot com}
     \end{minipage}
+
+
+  \section*{Work}
+    \begin{tablist}
+      \item[Intern]  \tab{}Research intern, IBM Research Africa, 2022-
+    \end{tablist}
 
 
   \section*{Education}
     \begin{tablist}
-        \item[MSc.]  \tab{}Quantum Computing and Quantum Information, Stellenbosch University, 2020-
-        \item[Hons.]  \tab{}Theoretical Physics~\textit{cum laude}, Stellenbosch University, 2019
-        \item[BSc.]  \tab{}Theoretical Physics~\textit{cum laude}, Stellenbosch University, 2018
+        \item[PhD]  \tab{}Quantum computing applications and optics, Stellenbosch University, 2022-
+        \item[MSc.]  \tab{}Quantum computing applications and optics
+          ~(\textit{cum laude}) \href{https://github.com/Unathi-Skosana/mastersthesis}{link}, Stellenbosch University, 2020-2022
+        \item[Hons.]  \tab{}Theoretical Physics ~(\textit{cum laude}),
+          Stellenbosch University, 2019
+        \item[BSc.]  \tab{}Theoretical Physics ~(\textit{cum laude}),
+          Stellenbosch University, 2016-2018
     \end{tablist}
 
 	\section*{Preprints n' Publications}
 	\begin{tablist}
-   \item \tab{}Unathi Skosana and Mark Tame \enquote{Demonstration of Shor’s factoring algorithm for N = 21 on IBM quantum processors}. In: \textit{Sci Rep} (Aug 2021). DOI: \href{https://doi.org/10.1038/s41598-021-95973-w}{10.1038/10.1038/s41598-021-95973-w}. arXiv: \href{https://arxiv.org/abs/2103.13855}{2013.13855 [quant-ph]}
-	\item \tab{}Unathi Skosana and Mark Tame \enquote{On the advantages of relative Toffoli gates}. Submitted to \textit{SAIP2021} conference \href{https://events.saip.org.za/event/206/papers/7011/files/3773-on_the_advantages_of_relative_toffoli_gates.pdf}{7011.3773}
+  \item[2021] \tab{}Unathi Skosana and Mark Tame \enquote{Demonstration of Shor’s factoring algorithm for N = 21 on IBM quantum processors}. In: \textit{Sci Rep} (Aug 2021). DOI: \href{https://doi.org/10.1038/s41598-021-95973-w}{10.1038/10.1038/s41598-021-95973-w}. arXiv: \href{https://arxiv.org/abs/2103.13855}{2013.13855 [quant-ph]}
+	\item[2021] \tab{}Unathi Skosana and Mark Tame \enquote{On the advantages of relative Toffoli gates}. Submitted to \textit{SAIP2021} conference \href{https://events.saip.org.za/event/206/papers/7011/files/3773-on_the_advantages_of_relative_toffoli_gates.pdf}{7011.3773}
 	\end{tablist}
 
 
@@ -122,23 +131,28 @@
 
 	\begin{tablist}
        \item[2021] \tab{}\enquote{On the advantages of relative phase Toffolis} SAIP2021. 28 July
-	   \item[2019] \tab{}\enquote{Modeling of Measurement-based Quantum Computing on IBM Q Experience Devices} Quantum Africa V conference. 5 Sept 
-       \item[2019] \tab{}\enquote{Modeling of Measurement-based Quantum Computing on IBM Q Experience Devices} WitsQ Summer School. 10 Dec 
+	   \item[2019] \tab{}\enquote{Modeling of Measurement-based Quantum Computing on IBM Q Experience Devices} Quantum Africa V conference. 5 Sept
+       \item[2019] \tab{}\enquote{Modeling of Measurement-based Quantum Computing on IBM Q Experience Devices} WitsQ Summer School. 10 Dec
 	\end{tablist}
 
 	\section*{Grants n' Recognition}
 
 	\begin{tablist}
+    \item[2022] \tab{} \href{https://qiskit.org/advocates/}{Qiskit Advocate},
+      Qiskit
 		\item[2020-] \tab{}Masters Research Grant, CSIR
 		\item[2020] \tab{}Recognized as a undergraduate top achiever by the physics department at Stellenbosch University
 		\item[2019] \tab{}Merit Bursary, Stellenbosch University
 		\item[2018] \tab{}Undergraduate Fund, SKA Undergraduate Programme
 	\end{tablist}
 
+	\section*{Selected projects}
+  \begin{tablist}
+  \item[2021] \tab{} \href{https://github.com/Unathi-Skosana/hyperentangled-photons-masters-experiment}{Hyperentangled-photons-masters-experiment}
+  \end{tablist}
 
 	\section*{Service}
 	\begin{tablist}
 		\item[2018-] \tab{} Teaching assistant for physics 114/144 at Stellenbosch University
 	\end{tablist}
-
 \end{document}
