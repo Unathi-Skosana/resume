@@ -1,4 +1,4 @@
-\documentclass[12pt,letterpaper]{report}
+\documentclass[letterpaper, 11pt]{report}
 
 \usepackage{fontspec}
 \usepackage[T1]{fontenc} % output T1 font encoding (8-bit) for accented characters as single glyph
@@ -27,9 +27,11 @@
 \titlespacing{\subsection}{0pt}{16pt plus 4pt minus 4pt}{4pt plus 2pt minus 2pt}
 
 % set page margins (assumes letter paper)
-\geometry{body={6.5in, 9.0in},
-    left=1.0in,
-    top=1.0in}
+\geometry{
+  body={6.5in, 9.0in},
+ left=1.0in,
+ top=1.0in
+ }
 
 % prevent paragraph indentation
 \setlength\parindent{0em}
@@ -71,7 +73,7 @@
 citecolor=xkcdDeepSkyBlue, linktocpage=true, breaklinks=true}
 
 % Set fonts
-%\defaultfontfeatures{Mapping=tex-text}
+\defaultfontfeatures{Mapping=tex-text}
 \setmainfont{ETBembo}
 \setsansfont{Roboto Slab}
 
@@ -83,76 +85,112 @@ citecolor=xkcdDeepSkyBlue, linktocpage=true, breaklinks=true}
 %if desired, this will create a really nice customized footer
 
 \begin{document}
-	\raggedright{}
+% display today's date as Month Year after a vertical space below the end of the text
+    \begin{center}
+        \vfill
+        \small {Updated \monthyeardate\today}
+    \end{center}
+
+    \vspace{2em}
 
     % display your name as the document title
     \namefont{\name}
 
     % affiliation and contact info blocks
     \vspace{1em}
-    \begin{minipage}[t]{0.700\textwidth}
-        % current primary affiliation, left-aligned
-        Department of Physics, Stellenbosch University
+
+    \begin{minipage}[t]{0.45\linewidth}
+      Department of Physics, \\
+      Merensky Building, \\
+      Merriman Ave, Stellenbosch, 7600
     \end{minipage}
-    \begin{minipage}[t]{0.295\textwidth}
-        % contact info details, right-aligned
-        %\flushright{}
-        \href{https://unathi.dev}{Website} \\
-        \href{https://github.com/Unathi-Skosana}{Github} \\
-        \href{mailto:ukskosana@gmail.com}{ukskosana at gmail dot com}
+    \hfill
+    \begin{minipage}[t]{0.5\linewidth}
+        \textbf{website} \href{https://www.unathi.dev}{unathi.dev} \\
+        \textbf{github}  \href{https://www.github.com/Unathi-Skosana}{github.com/Unathi-Skosana}  \\
+        \textbf{email} \href{mailto:ukskosana@gmail.com}{ukskosana at gmail dot com} \hfill
     \end{minipage}
 
 
-  \section*{Work}
+    \section*{Education}
+
     \begin{tablist}
-      \item[Intern]  \tab{}Research intern, IBM Research Africa, 2022-
+      \item[2022 -- present]     \tab{}\textbf{PhD} Quantum computing, Stellenbosch University (SU)
+      \item[2020 -- 2022] \tab{}\textbf{MSc} Quantum computing (\textit{cum laude}) [\href{https://github.com/Unathi-Skosana/mastersthesis}{read here}], Stellenbosch University (SU)
+      \item[2019 -- 2020]  \tab{}\textbf{Hons} Theoretical Physics (\textit{cum laude}), Stellenbosch University (SU)
+      \item[2016 -- 2018]  \tab{}\textbf{Bsc} Theoretical Physics (\textit{cum laude}), Stellenbosch University (SU)
     \end{tablist}
 
 
-  \section*{Education}
+    \section*{Work Experience}
+
     \begin{tablist}
-        \item[PhD]  \tab{}Quantum computing applications and optics, Stellenbosch University, 2022-
-        \item[MSc.]  \tab{}Quantum computing applications and optics
-          ~(\textit{cum laude}) \href{https://github.com/Unathi-Skosana/mastersthesis}{link}, Stellenbosch University, 2020-2022
-        \item[Hons.]  \tab{}Theoretical Physics ~(\textit{cum laude}),
-          Stellenbosch University, 2019
-        \item[BSc.]  \tab{}Theoretical Physics ~(\textit{cum laude}),
-          Stellenbosch University, 2016-2018
+      \item[2022 -- present]  \tab{} Research intern, IBM Research Africa
     \end{tablist}
 
-	\section*{Preprints n' Publications}
-	\begin{tablist}
-  \item[2021] \tab{}Unathi Skosana and Mark Tame \enquote{Demonstration of Shor’s factoring algorithm for N = 21 on IBM quantum processors}. In: \textit{Sci Rep} (Aug 2021). DOI: \href{https://doi.org/10.1038/s41598-021-95973-w}{10.1038/10.1038/s41598-021-95973-w}. arXiv: \href{https://arxiv.org/abs/2103.13855}{2013.13855 [quant-ph]}
-	\item[2021] \tab{}Unathi Skosana and Mark Tame \enquote{On the advantages of relative Toffoli gates}. Submitted to \textit{SAIP2021} conference \href{https://events.saip.org.za/event/206/papers/7011/files/3773-on_the_advantages_of_relative_toffoli_gates.pdf}{7011.3773}
-	\end{tablist}
+    \section*{Grants and recognition}
 
+    \begin{tablist}
+		  \item[2020 -- 2021] \tab{} Undergraduate (department of physics) top achievers, Stellenbosch University (SU)
+		  \item[2020 -- 2022]  \tab{} Masters Research Grant, Council of Scientific and Industrial Research (CSIR)
+		  \item[2017 -- 2019]  \tab{} Undergraduate/Honours Programme, Square Kilometer Array (SKA)
+		  \item[2016 -- 2017]  \tab{} Merit Award Bursary, Stellenbosch University (SU)
+	  \end{tablist}
 
-	\section*{Talks n' Posters}
+    \section*{Papers}
 
-	\begin{tablist}
-       \item[2021] \tab{}\enquote{On the advantages of relative phase Toffolis} SAIP2021. 28 July
-	   \item[2019] \tab{}\enquote{Modeling of Measurement-based Quantum Computing on IBM Q Experience Devices} Quantum Africa V conference. 5 Sept
-       \item[2019] \tab{}\enquote{Modeling of Measurement-based Quantum Computing on IBM Q Experience Devices} WitsQ Summer School. 10 Dec
-	\end{tablist}
+    \begin{tablist}
+        \item[2021] \tab{}Unathi Skosana and Mark Tame \enquote{Demonstration of Shor’s factoring algorithm for N = 21 on IBM quantum processors}. In: \textit{Sci Rep} (Aug 2021). DOI: \href{https://doi.org/10.1038/s41598-021-95973-w}{10.1038/10.1038/s41598-021-95973-w}. arXiv: \href{https://arxiv.org/abs/2103.13855}{2013.13855 [quant-ph]}
+        \item[2021] \tab{}Unathi Skosana and Mark Tame \enquote{On the advantages of relative
+          Toffoli gates}. In: \textit{Corrigenda to The Proceedings of SAIP2021, the 65th  Annual Conference of
+          the South African Institute of Physics} (Apr 2022). pp. 14 - 21. ISBN:
+          978-0-620-97693-0. Online: \url{http://events.saip.org.za}
 
-	\section*{Grants n' Recognition}
+    \end{tablist}
 
-	\begin{tablist}
-    \item[2022] \tab{} \href{https://qiskit.org/advocates/}{Qiskit Advocate},
-      Qiskit
-		\item[2020-] \tab{}Masters Research Grant, CSIR
-		\item[2020] \tab{}Recognized as a undergraduate top achiever by the physics department at Stellenbosch University
-		\item[2019] \tab{}Merit Bursary, Stellenbosch University
-		\item[2018] \tab{}Undergraduate Fund, SKA Undergraduate Programme
-	\end{tablist}
+    \newpage{}
 
-	\section*{Selected projects}
-  \begin{tablist}
-  \item[2021] \tab{} \href{https://github.com/Unathi-Skosana/hyperentangled-photons-masters-experiment}{Hyperentangled-photons-masters-experiment}
-  \end{tablist}
+    \section*{Public speaking}
 
-	\section*{Service}
-	\begin{tablist}
-		\item[2018-] \tab{} Teaching assistant for physics 114/144 at Stellenbosch University
-	\end{tablist}
+    \begin{tablist}
+          \item[2022] \tab{}\enquote{Introduction to Quantum Computing Workshop} South African Institute of Industrial Engineers (SAIIE). 05 October
+          \item[2022] \tab{}\enquote{Introduction to Quantum Computing} South African Institute Electrical Engineers (SAIEE). 30 August
+          \item[2021] \tab{}\enquote{On the advantages of relative phase Toffolis} South
+            African Institute of Physics (SAIP)
+            ~ [\href{https://github.com/Unathi-Skosana/posters-n-presentations/blob/main/posters/witsq-summer-school-2019/release/poster.pdf}{view
+            here}]. 28 July
+          \item[2019] \tab{}\enquote{Modeling of Measurement-based Quantum Computing on
+            IBM Q Experience Devices} Quantum Africa V conference / WitsQ Summer School
+            [\href{https://github.com/Unathi-Skosana/posters-n-presentations/blob/main/posters/witsq-summer-school-2019/release/poster.pdf}{view
+            here}].
+            5 Sept/10 Dec
+    \end{tablist}
+
+    \section*{Selected projects}
+
+    \begin{tablist}
+      \item[2021 -- 2022] \tab{} Server/client code for controlling hyperentangled photonic light source
+        [\href{https://github.com/Unathi-Skosana/hyperentangled-photons-masters-experiment}{found
+        here}]
+    \end{tablist}
+
+    \section*{Service}
+
+    \begin{tablist}
+      \item[2018 -- 2021] \tab{} Teaching assistant for undergraduate physics 114/144 at Stellenbosch University
+    \end{tablist}
+
+    \section*{Miscellaneous}
+
+    \begin{tablist}
+      \item[2022]  \tab{} \href{https://www.credly.com/badges/1572414f-9c43-4bab-909b-be4abf516ae3/public_url}{Qiskit Advocate}, Qiskit
+      \item[2022]  \tab{} \href{https://www.credly.com/badges/055e900b-ec8b-428c-b0aa-854695b17bef/public_url}{IBM Certified Associate Developer}, Quantum Computation using Qiskit v0.2X
+      \item[2022]  \tab{} \href{https://www.credly.com/badges/ca639522-d9e4-412d-be79-95c3a0819c29/public_url}{IBM Quantum Spring Challenge 2022}, Qiskit
+      \item[2022]  \tab{} \href{https://github.com/qiskit-advocate/qamp-fall-22}{Qiskit Advocate
+        Mentorship Program Fall 2022}, Qiskit
+      \item[2020]  \tab{}
+        \href{https://www.credly.com/badges/1572414f-9c43-4bab-909b-be4abf516ae3/public_url}{Qiskit
+        Global Summer School 2020}, Qiskit
+    \end{tablist}
+
 \end{document}
