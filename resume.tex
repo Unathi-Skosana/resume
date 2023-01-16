@@ -1,16 +1,14 @@
-\documentclass[letterpaper, 11pt]{report}
-
-\usepackage{fontspec}
-\usepackage[T1]{fontenc} % output T1 font encoding (8-bit) for accented characters as single glyph
-\usepackage[strict,autostyle]{csquotes} % smart and nestable quote marks
+\documentclass[10pt]{extreport}
 \usepackage[USenglish]{babel} % regionalize hyphens, quote marks, etc automatically
+\usepackage[strict,autostyle]{csquotes} % smart and nestable quote marks
 \usepackage{datetime} % enable formatting of date output
 \usepackage{tabto}    % make nice tabbing
-\usepackage{hyperref} % enable hyperlinks and pdf metadata
-\usepackage{geometry} % manually set page margins
 \usepackage{enumitem} % enumerate with [resume] option
 \usepackage{titlesec} % allow custom section fonts
 \usepackage{setspace} % custom line spacing
+
+%What is your name?
+\newcommand*{\name}{Unathi Koketso Skosana}
 
 % how far to tab for list items with left-aligned date: different fonts need different widths
 \newcommand{\listtabwidth}{1.7cm}
@@ -27,11 +25,14 @@
 \titlespacing{\subsection}{0pt}{16pt plus 4pt minus 4pt}{4pt plus 2pt minus 2pt}
 
 % set page margins (assumes letter paper)
+\usepackage{geometry} % manually set page margins
 \geometry{
-  body={6.5in, 9.0in},
- left=1.0in,
- top=1.0in
- }
+ body={6.5in, 9.0in},
+ left=.875in,
+ top=.875in,
+ bottom=.875in,
+ right=.875in
+}
 
 % prevent paragraph indentation
 \setlength\parindent{0em}
@@ -44,45 +45,48 @@
 
 % make unordered lists without bullets and use compact spacing
 \renewenvironment{itemize}
-{\begin{list}{}{\setlength{\leftmargin}{0em}
-                \setlength{\parskip}{0em}
-                \setlength{\itemsep}{\listitemspace}
-                \setlength{\parsep}{\listitemspace}}}
+{\begin{list}{}{
+    \setlength{\leftmargin}{0em}
+    \setlength{\parskip}{0em}
+    \setlength{\itemsep}{\listitemspace}
+    \setlength{\parsep}{\listitemspace}}}
 {\end{list}}
 
 % make tabbed lists so content is left-aligned next to years
 \TabPositions{\listtabwidth}
 \newlist{tablist}{description}{3}
-\setlist[tablist]{leftmargin=\listtabwidth,
-    labelindent=0em,
-    topsep=0em,
-    partopsep=0em,
-    itemsep=\listitemspace,
-    parsep=\listitemspace,
-    font=\normalfont}
+\setlist[tablist]{
+  leftmargin  = \listtabwidth,
+  labelindent = 0em,
+  topsep      = 0em,
+  partopsep   = 0em,
+  itemsep     = \listitemspace,
+  parsep      = \listitemspace,
+  font        = \normalfont
+}
 
 % print only the month and year when using \today
 \newdateformat{monthyeardate}{\monthname[\THEMONTH] \THEYEAR}
 
 % custom colors for url & email links.
 \usepackage{xkcdcolors}
-
-%
 \usepackage{hyperref}
-\hypersetup{colorlinks=true, linkcolor=xkcdDeepSkyBlue, urlcolor=xkcdDeepSkyBlue,
-citecolor=xkcdDeepSkyBlue, linktocpage=true, breaklinks=true}
-
-% Set fonts
-\defaultfontfeatures{Mapping=tex-text}
-\setmainfont{ETBembo}
-\setsansfont{Roboto Slab}
-
-%What is your name?
-\newcommand*{\name}{
-    Unathi Koketso Skosana
+\hypersetup{
+  colorlinks  = true,
+  linkcolor   = xkcdPeriwinkle,
+  urlcolor    = xkcdPeriwinkle,
+  citecolor   = xkcdPeriwinkle,
+  linktocpage = true,
+  breaklinks  = true,
+  pdfauthor   = {\name},
+  pdfkeywords = {quantum, physics, computing},
+  pdftitle    = {\name: resume},
+  pdfsubject  = {resume},
+  pdfpagemode = UseNone
 }
 
-%if desired, this will create a really nice customized footer
+% Set fonts
+\renewcommand\familydefault{\sfdefault}
 
 \begin{document}
 % display today's date as Month Year after a vertical space below the end of the text
@@ -111,7 +115,6 @@ citecolor=xkcdDeepSkyBlue, linktocpage=true, breaklinks=true}
         \textbf{email} \href{mailto:ukskosana@gmail.com}{ukskosana at gmail dot com} \hfill
     \end{minipage}
 
-
     \section*{Education}
 
     \begin{tablist}
@@ -121,11 +124,11 @@ citecolor=xkcdDeepSkyBlue, linktocpage=true, breaklinks=true}
       \item[2016 -- 2018]  \tab{}\textbf{Bsc} Theoretical Physics (\textit{cum laude}), Stellenbosch University (SU)
     \end{tablist}
 
-
     \section*{Work Experience}
 
     \begin{tablist}
       \item[2022 -- present]  \tab{} Research intern, IBM Research Africa
+      \item[2018 -- 2021] \tab{} Teaching assistant (undergraduate physics 114/144), Stellenbosch University
     \end{tablist}
 
     \section*{Grants and recognition}
@@ -140,7 +143,7 @@ citecolor=xkcdDeepSkyBlue, linktocpage=true, breaklinks=true}
     \section*{Papers}
 
     \begin{tablist}
-        \item[2021] \tab{}Unathi Skosana and Mark Tame \enquote{Demonstration of Shor’s factoring algorithm for N = 21 on IBM quantum processors}. In: \textit{Sci Rep} (Aug 2021). DOI: \href{https://doi.org/10.1038/s41598-021-95973-w}{10.1038/10.1038/s41598-021-95973-w}. arXiv: \href{https://arxiv.org/abs/2103.13855}{2013.13855 [quant-ph]}
+        \item[2021] \tab{}Unathi Skosana and Mark Tame \enquote{Demonstration of Shor’s factoring algorithm for N = 21 on IBM quantum processors}. In: \textit{Sci Rep} (Aug 2021). DOI: \href{https://doi.org/10.1038/s41598-021-95973-w}{10.1038/s41598-021-95973-w}. arXiv: \href{https://arxiv.org/abs/2103.13855}{2013.13855 [quant-ph]}
         \item[2021] \tab{}Unathi Skosana and Mark Tame \enquote{On the advantages of relative
           Toffoli gates}. In: \textit{Corrigenda to The Proceedings of SAIP2021, the 65th  Annual Conference of
           the South African Institute of Physics} (Apr 2022). pp. 14 - 21. ISBN:
@@ -156,9 +159,7 @@ citecolor=xkcdDeepSkyBlue, linktocpage=true, breaklinks=true}
           \item[2022] \tab{}\enquote{Introduction to Quantum Computing Workshop} South African Institute of Industrial Engineers (SAIIE). 05 October
           \item[2022] \tab{}\enquote{Introduction to Quantum Computing} South African Institute Electrical Engineers (SAIEE). 30 August
           \item[2021] \tab{}\enquote{On the advantages of relative phase Toffolis} South
-            African Institute of Physics (SAIP)
-            ~ [\href{https://github.com/Unathi-Skosana/posters-n-presentations/blob/main/posters/witsq-summer-school-2019/release/poster.pdf}{view
-            here}]. 28 July
+            African Institute of Physics (SAIP) \newline [\href{https://github.com/Unathi-Skosana/posters-n-presentations/blob/main/posters/witsq-summer-school-2019/release/poster.pdf}{view here}]. 28 July
           \item[2019] \tab{}\enquote{Modeling of Measurement-based Quantum Computing on
             IBM Q Experience Devices} Quantum Africa V conference / WitsQ Summer School
             [\href{https://github.com/Unathi-Skosana/posters-n-presentations/blob/main/posters/witsq-summer-school-2019/release/poster.pdf}{view
@@ -170,14 +171,7 @@ citecolor=xkcdDeepSkyBlue, linktocpage=true, breaklinks=true}
 
     \begin{tablist}
       \item[2021 -- 2022] \tab{} Server/client code for controlling hyperentangled photonic light source
-        [\href{https://github.com/Unathi-Skosana/hyperentangled-photons-masters-experiment}{found
-        here}]
-    \end{tablist}
-
-    \section*{Service}
-
-    \begin{tablist}
-      \item[2018 -- 2021] \tab{} Teaching assistant for undergraduate physics 114/144 at Stellenbosch University
+        [\href{https://github.com/Unathi-Skosana/hyperentangled-photons-masters-experiment}{found here}]
     \end{tablist}
 
     \section*{Miscellaneous}
