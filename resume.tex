@@ -86,13 +86,25 @@
 }
 
 % Set fonts
+% \usepackage[sfdefault,medium]{inter} %% Option 'sfdefault' only if 'inter' is to be
+% the base font of the document
+\usepackage{fontspec}
+\setsansfont{Satoshi}[
+  UprightFont=*-Regular,
+  ItalicFont=*-Italic,
+  BoldFont=*-Bold,
+  BoldItalicFont=*-BoldItalic
+]
+\setmonofont{Hack}
+\newfontfamily\Raleway[Ligatures=TeX]{Satoshi}
+\newfontfamily\Lato[Ligatures=TeX]{Satoshi}
 \renewcommand\familydefault{\sfdefault}
 
 \begin{document}
 % display today's date as Month Year after a vertical space below the end of the text
 \begin{center}
 	\vfill
-	\small {Updated February 2023}
+	\small {Updated February 2025}
 	% \small {Updated \monthyeardate\today}
 \end{center}
 
@@ -120,59 +132,65 @@
 
 \begin{tablist}
 	\item[2022 -- present]     \tab{}\textbf{PhD} Quantum computing, Stellenbosch University (SU)
-	\item[2020 -- 2022] \tab{}\textbf{MSc} Quantum computing (\textit{cum laude}) [\href{https://github.com/Unathi-Skosana/mastersthesis}{read here}], Stellenbosch University (SU)
-	\item[2019 -- 2020]  \tab{}\textbf{Hons} Theoretical Physics (\textit{cum laude}), Stellenbosch University (SU)
-	\item[2016 -- 2018]  \tab{}\textbf{Bsc} Theoretical Physics (\textit{cum laude}), Stellenbosch University (SU)
+	\item[2020 -- 2022] \tab{}\textbf{MSc} Quantum computing ({cum laude}) [\href{https://github.com/Unathi-Skosana/mastersthesis}{see here}], Stellenbosch University (SU)
+\item[2019 -- 2020]  \tab{}\textbf{Hons} Theoretical Physics ({cum laude}), Stellenbosch University (SU)
+\item[2016 -- 2018]  \tab{}\textbf{Bsc} Theoretical Physics ({cum laude}), Stellenbosch University (SU)
 \end{tablist}
 
-\section*{Work Experience}
+\section*{Work experience}
 
 \begin{tablist}
-	\item[2022 -- present]  \tab{} Research intern, IBM Research Africa
+	\item[2022 -- 2023]  \tab{} Research intern, IBM Research Africa
 	\item[2018 -- 2021] \tab{} Teaching assistant (undergraduate physics 114/144), Stellenbosch University
 \end{tablist}
 
 \section*{Grants and recognition}
 
 \begin{tablist}
-	\item[2020 -- 2021] \tab{} Undergraduate (department of physics) top achievers, Stellenbosch University (SU)
+
+	\item[2023 -- present]  \tab{} DSTI Interprogramme Bursary Scheme), Council of Scientific and Industrial Research (CSIR)
 	\item[2020 -- 2022]  \tab{} Masters Research Grant, Council of Scientific and Industrial Research (CSIR)
+	\item[2020 -- 2021] \tab{} Undergraduate (department of physics) top achievers, Stellenbosch University (SU)
 	\item[2017 -- 2019]  \tab{} Undergraduate/Honours Programme, Square Kilometer Array (SKA)
 	\item[2016 -- 2017]  \tab{} Merit Award Bursary, Stellenbosch University (SU)
 \end{tablist}
 
-\section*{Papers}
+\section*{Academic papers}
 
 \begin{tablist}
-	\item[2021] \tab{}Unathi Skosana and Mark Tame \enquote{Demonstration of Shor’s factoring algorithm for N = 21 on IBM quantum processors}. In: \textit{Sci Rep} (Aug 2021). DOI: \href{https://doi.org/10.1038/s41598-021-95973-w}{10.1038/s41598-021-95973-w}. arXiv: \href{https://arxiv.org/abs/2103.13855}{2013.13855 [quant-ph]}
+	\item[2025] \tab{}Unathi Skosana, Sthembiso Gumede and Mark Tame \enquote{Spin-state energetics of heme-related models with the variational quantum eigensolver}. arXiv: \href{https://arxiv.org/abs/2504.08494}{2504.08494 [quant-ph]}
+	\item[2024] \tab{}Unathi Skosana and Mark Tame \enquote{Hyperparameter tuning of variational quantum algorithms}. In: {The Proceedings of SAIP2024, the 68th  Annual Conference of
+		the South African Institute of Physics} (December 2024). pp. 677 - 683. ISBN: 978-1-0370-2645-4. Online: \href{https://events.saip.org.za/event/246/page/666-the-proceedings-of-saip2024}{The proceedings of SAIP2024}
+	\item[2021] \tab{}Unathi Skosana and Mark Tame \enquote{Demonstration of Shor’s factoring algorithm for N = 21 on IBM quantum processors}. In: {Sci Rep} (Aug 2021). DOI: \href{https://doi.org/10.1038/s41598-021-95973-w}{10.1038/s41598-021-95973-w}. arXiv: \href{https://arxiv.org/abs/2103.13855}{2013.13855 [quant-ph]}
 	\item[2021] \tab{}Unathi Skosana and Mark Tame \enquote{On the advantages of relative
-		Toffoli gates}. In: \textit{Corrigenda to The Proceedings of SAIP2021, the 65th  Annual Conference of
+		Toffoli gates}. In: {Corrigenda to The Proceedings of SAIP2021, the 65th  Annual Conference of
 		the South African Institute of Physics} (Apr 2022). pp. 14 - 21. ISBN:
-	978-0-620-97693-0. Online: \url{http://events.saip.org.za}
+		978-0-620-97693-0. Online: \href{https://events.saip.org.za/event/206/page/446-the-proceedings-of-saip2021}{The proceedings of SAIP2021}
 
-\end{tablist}
 
-\section*{Public speaking}
-
-\begin{tablist}
-	\item[2022] \tab{}\enquote{Introduction to Quantum Computing Workshop} South African Institute of Industrial Engineers (SAIIE). 05 October
-	\item[2022] \tab{}\enquote{Introduction to Quantum Computing} South African Institute Electrical Engineers (SAIEE). 30 August
-	\item[2021] \tab{}\enquote{On the advantages of relative phase Toffolis} South
-	African Institute of Physics (SAIP) \newline [\href{https://github.com/Unathi-Skosana/posters-n-presentations/blob/main/posters/witsq-summer-school-2019/release/poster.pdf}{view here}]. 28 July
-	\item[2019] \tab{}\enquote{Modeling of Measurement-based Quantum Computing on
-		IBM Q Experience Devices} Quantum Africa V conference / WitsQ Summer School
-		[\href{https://github.com/Unathi-Skosana/posters-n-presentations/blob/main/posters/witsq-summer-school-2019/release/poster.pdf}{view
-				here}].
-	5 Sept/10 Dec
 \end{tablist}
 
 \newpage{}
 
-\section*{Selected projects}
+\section*{Public speaking}
 
 \begin{tablist}
-	\item[2021 -- 2022] \tab{} Server/client code for controlling hyperentangled photonic light source
-		[\href{https://github.com/Unathi-Skosana/hyperentangled-photons-masters-experiment}{found here}]
+	\item[2024] \tab{}\enquote{Hyperparameter tuning of variational quantum algorithms}  (1st place prize) South
+		African Institute of Physics (SAIP) [\href{https://github.com/Unathi-Skosana/posters-n-presentations/blob/main/presentations/saip2024/saip2024_final.pdf}{see here}]. 02 August
+	\item[2023]  \tab{} \enquote{Augustus: An AI-powered chatbot fine-tuned for building UX/UI in NextJS 13} (1st place prize), Fintech hackathon hosted by Innovus, Stellenbosch University [\href{https://github.com/Unathi-Skosana/posters-n-presentations/blob/main/presentations/su-innovus-hackathon-2023/export/Augustus-SU-hackathon-presentation.pdf}{see here}]. 08 October
+	\item[2022] \tab{}\enquote{Introduction to Quantum Computing Workshop} South African Institute of Industrial Engineers (SAIIE). 05 October
+	\item[2022] \tab{}\enquote{Introduction to Quantum Computing} South African Institute Electrical Engineers (SAIEE). 30 August
+	\item[2021] \tab{}\enquote{On the advantages of relative phase Toffolis} South
+	African Institute of Physics (SAIP) [\href{https://github.com/Unathi-Skosana/posters-n-presentations/blob/main/posters/saip-2021/release/poster.pdf}{see here}]. \newline 28 July
+	\item[2019] \tab{}\enquote{Modeling of Measurement-based Quantum Computing on
+		IBM Q Experience Devices}  (1st place prize) WitsQ Summer School
+		[\href{https://github.com/Unathi-Skosana/posters-n-presentations/blob/main/posters/witsq-summer-school-2019/release/poster.pdf}{see here}]. 10 Dec
+\end{tablist}
+
+\section*{Projects}
+
+\begin{tablist}
+	\item[2022] \tab{}Server and client (Flask + React Native) code for controlling hyperentangled photonic light source [\href{https://github.com/Unathi-Skosana/hyperentangled-photons-masters-experiment}{see here}]
 \end{tablist}
 
 \section*{Miscellaneous}
