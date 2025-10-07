@@ -1,17 +1,13 @@
-\documentclass[10pt]{extreport}
-\usepackage[USenglish]{babel} % regionalize hyphens, quote marks, etc automatically
-\usepackage[strict,autostyle]{csquotes} % smart and nestable quote marks
-\usepackage{datetime} % enable formatting of date output
-\usepackage{tabto}    % make nice tabbing
-\usepackage{enumitem} % enumerate with [resume] option
-\usepackage{titlesec} % allow custom section fonts
-\usepackage{setspace} % custom line spacing
+\documentclass[9pt]{extreport}
+\usepackage[USenglish]{babel}
+\usepackage[strict,autostyle]{csquotes}
+\usepackage{datetime}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{setspace}
 
 %What is your name?
 \newcommand*{\name}{Unathi Koketso Skosana}
-
-% how far to tab for list items with left-aligned date: different fonts need different widths
-\newcommand{\listtabwidth}{1.7cm}
 
 % define font to use as document's title
 \newcommand{\namefont}[1]{{\normalfont\bfseries\Huge{#1}}}
@@ -25,7 +21,7 @@
 \titlespacing{\subsection}{0pt}{16pt plus 4pt minus 4pt}{4pt plus 2pt minus 2pt}
 
 % set page margins (assumes letter paper)
-\usepackage{geometry} % manually set page margins
+\usepackage{geometry}
 \geometry{
  body={6.5in, 9.0in},
  left=.875in,
@@ -52,19 +48,6 @@
     \setlength{\parsep}{\listitemspace}}}
 {\end{list}}
 
-% make tabbed lists so content is left-aligned next to years
-\TabPositions{\listtabwidth}
-\newlist{tablist}{description}{3}
-\setlist[tablist]{
-  leftmargin  = \listtabwidth,
-  labelindent = 0em,
-  topsep      = 0em,
-  partopsep   = 0em,
-  itemsep     = \listitemspace,
-  parsep      = \listitemspace,
-  font        = \normalfont
-}
-
 % print only the month and year when using \today
 \newdateformat{monthyeardate}{\monthname[\THEMONTH] \THEYEAR}
 
@@ -86,8 +69,6 @@
 }
 
 % Set fonts
-% \usepackage[sfdefault,medium]{inter} %% Option 'sfdefault' only if 'inter' is to be
-% the base font of the document
 \usepackage{fontspec}
 \setsansfont{Satoshi}[
   UprightFont=*-Regular,
@@ -99,6 +80,38 @@
 \newfontfamily\Raleway[Ligatures=TeX]{Satoshi}
 \newfontfamily\Lato[Ligatures=TeX]{Satoshi}
 \renewcommand\familydefault{\sfdefault}
+
+% Command for creating entries with minipage
+\newcommand{\entry}[2]{%
+  \noindent%
+  \begin{minipage}[t]{2.25cm}%
+    \raggedright #1%
+  \end{minipage}%
+  \hspace{0.4cm}%
+  \begin{minipage}[t]{\dimexpr\textwidth-2cm\relax}%
+    #2%
+  \end{minipage}%
+  \vspace{0.25cm}%
+}
+
+% Command for creating entries with optional summary
+\newcommand{\entrywithsummary}[3]{%
+  \noindent%
+  \begin{minipage}[t]{2.25cm}%
+    \raggedright #1%
+  \end{minipage}%
+  \hspace{0.4cm}%
+  \begin{minipage}[t]{\dimexpr\textwidth-2cm\relax}%
+    #2%
+  \end{minipage}%
+  
+  \noindent%
+  \hspace{2cm}%
+  \begin{minipage}[t]{\dimexpr\textwidth-2cm\relax}%
+    {\small\textit{#3}}%
+  \end{minipage}%
+  \vspace{0.25cm}%
+}
 
 \begin{document}
 % display today's date as Month Year after a vertical space below the end of the text
@@ -117,96 +130,172 @@
 \vspace{1em}
 
 \begin{minipage}[t]{0.45\linewidth}
-	Department of physics, \\
-	Merensky Building, \\
-	Merriman Ave, Stellenbosch, 7600
+   Department of physics, \vspace*{0.2cm}\\
+   Merensky Building, \vspace*{0.2cm} \\
+   Merriman Ave, Stellenbosch, 7600
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.5\linewidth}
-	\textbf{website} \href{https://www.unathi.dev}{unathi.dev} \\
-	\textbf{github}  \href{https://www.github.com/Unathi-Skosana}{github.com/Unathi-Skosana}  \\
-	\textbf{email} \href{mailto:ukskosana@gmail.com}{ukskosana at gmail dot com} \hfill
+	\textbf{website} \href{https://www.unathi.dev}{unathi.dev} \vspace*{0.2cm} \\
+	\textbf{github}  \href{https://www.github.com/Unathi-Skosana}{github.com/Unathi-Skosana} \vspace*{0.2cm} \\
+	\textbf{email}   \href{mailto:ukskosana@gmail.com}{ukskosana@gmail.com} \hfill
 \end{minipage}
 
 \section*{Education}
 
-\begin{tablist}
-	\item[2022 -- present]     \tab{}\textbf{PhD} Quantum computing, Stellenbosch University (SU)
-	\item[2020 -- 2022] \tab{}\textbf{MSc} Quantum computing ({cum laude}) [\href{https://github.com/Unathi-Skosana/mastersthesis}{see here}], Stellenbosch University (SU)
-\item[2019 -- 2020]  \tab{}\textbf{Hons} Theoretical Physics ({cum laude}), Stellenbosch University (SU)
-\item[2016 -- 2018]  \tab{}\textbf{Bsc} Theoretical Physics ({cum laude}), Stellenbosch University (SU)
-\end{tablist}
+\entry{2022 -- present}{\textbf{PhD} in Quantum applications and photonics, Stellenbosch University (SU) \\
+{Expected completion}: First half of 2026 \\
+{Focus}: Variational quantum algorithms, quantum chemistry and experimental quantum photonics}
+
+\entry{2020 -- 2022}{\textbf{MSc} in Quantum applications and photonics (\textit{cum laude}), Stellenbosch University (SU) \\
+  {Thesis}: \href{https://github.com/Unathi-Skosana/mastersthesis}{Quantum computing on cloud-based processors}}
+
+\entry{2019 -- 2020}{\textbf{Hons} in Theoretical Physics (\textit{cum laude}), Stellenbosch University (SU)}
+
+\entry{2016 -- 2018}{\textbf{Bsc} in Theoretical Physics (\textit{cum laude}), Stellenbosch University (SU)}
+
+\section*{Technical Skills}
+
+\entry{Languages}{Python, C, JavaScript/TypeScript, Bash, Go}
+
+\entry{ML/AI/Quantum}{Jax, NumPy, Numba, Polars, QuTiP, Qiskit, Quimb}
+
+\entry{Web}{React/React Native, Next.js, Flask, FastAPI, Node.js}
+
+\entry{Tools}{Git, Linux/Unix, LaTeX}
 
 \section*{Work experience}
 
-\begin{tablist}
-	\item[2022 -- 2023]  \tab{} Research intern, IBM Research Africa
-	\item[2018 -- 2021] \tab{} Teaching assistant (undergraduate physics 114/144), Stellenbosch University
-\end{tablist}
+\entry{2022 -- 2023}{\textbf{Research Intern}, IBM Research Africa
+\begin{itemize}
+    \item Contributed to research exploring the use of variational quantum algorithms for organometallic molecules.
+    \item Contributed to IBM Quantum's open-source projects such as Qiskit, Qiskit Nature.
+    \item Organized and engaged in outreach activities, i.e. hackathons, presentations and workshops.
+\end{itemize}}
+
+\entry{2023 -- 2024}{\textbf{Teaching Assistant} (Quantum Mechanics A 334), Stellenbosch University
+\begin{itemize}
+  \item Instructed students during tutorial sessions.
+\end{itemize}}
+
+\entry{2018 -- 2021}{\textbf{Teaching Assistant} (Undergraduate Physics P114/P144), Stellenbosch University
+\begin{itemize}
+  \item Facilitated laboratory sessions and tutorials for 100+ first-year physics students.
+\end{itemize}}
 
 \section*{Grants and recognition}
 
-\begin{tablist}
+\entry{2023 -- present}{DSTI Interprogramme Bursary Scheme, Council of Scientific and Industrial Research (CSIR)}
 
-	\item[2023 -- present]  \tab{} DSTI Interprogramme Bursary Scheme), Council of Scientific and Industrial Research (CSIR)
-	\item[2020 -- 2022]  \tab{} Masters Research Grant, Council of Scientific and Industrial Research (CSIR)
-	\item[2020 -- 2021] \tab{} Undergraduate (department of physics) top achievers, Stellenbosch University (SU)
-	\item[2017 -- 2019]  \tab{} Undergraduate/Honours Programme, Square Kilometer Array (SKA)
-	\item[2016 -- 2017]  \tab{} Merit Award Bursary, Stellenbosch University (SU)
-\end{tablist}
+\entry{2020 -- 2022}{Masters Research Grant, Council of Scientific and Industrial Research (CSIR)}
+
+% \entry{2020 -- 2021}{Undergraduate (department of physics) top achievers, Stellenbosch University (SU)}
+
+\entry{2017 -- 2019}{Undergraduate Programme, Square Kilometer Array (SKA)}
+
+\entry{2016 -- 2017}{Merit Award Bursary, Stellenbosch University (SU)}
+
+\newpage 
 
 \section*{Academic papers}
 
-\begin{tablist}
-	\item[2025] \tab{}Unathi Skosana, Sthembiso Gumede and Mark Tame \enquote{Spin-state energetics of heme-related models with the variational quantum eigensolver}. arXiv: \href{https://arxiv.org/abs/2504.08494}{2504.08494 [quant-ph]}
-	\item[2024] \tab{}Unathi Skosana and Mark Tame \enquote{Hyperparameter tuning of variational quantum algorithms}. In: {The Proceedings of SAIP2024, the 68th  Annual Conference of
-		the South African Institute of Physics} (December 2024). pp. 677 - 683. ISBN: 978-1-0370-2645-4. Online: \href{https://events.saip.org.za/event/246/page/666-the-proceedings-of-saip2024}{The proceedings of SAIP2024}
-	\item[2021] \tab{}Unathi Skosana and Mark Tame \enquote{Demonstration of Shor’s factoring algorithm for N = 21 on IBM quantum processors}. In: {Sci Rep} (Aug 2021). DOI: \href{https://doi.org/10.1038/s41598-021-95973-w}{10.1038/s41598-021-95973-w}. arXiv: \href{https://arxiv.org/abs/2103.13855}{2013.13855 [quant-ph]}
-	\item[2021] \tab{}Unathi Skosana and Mark Tame \enquote{On the advantages of relative
-		Toffoli gates}. In: {Corrigenda to The Proceedings of SAIP2021, the 65th  Annual Conference of
-		the South African Institute of Physics} (Apr 2022). pp. 14 - 21. ISBN:
-		978-0-620-97693-0. Online: \href{https://events.saip.org.za/event/206/page/446-the-proceedings-of-saip2021}{The proceedings of SAIP2021}
+\entry{2025}{\textbf{Unathi Skosana}, Sthembiso Gumede and Mark Tame \href{https://arxiv.org/abs/2504.08494}{Spin-state energetics of heme-related models with the variational quantum eigensolver}. Submitted for publication (April 2025)}
 
+\entry{2024}{\textbf{Unathi Skosana} and Mark Tame \href{https://events.saip.org.za/event/246/page/666-the-proceedings-of-saip2024}{Hyperparameter tuning of variational quantum algorithms}. In: The Proceedings of SAIP2024 (December 2024)}
 
-\end{tablist}
+\entry{2022}{\textbf{Unathi Skosana} and Mark Tame \href{https://events.saip.org.za/event/206/page/446-the-proceedings-of-saip2021}{On the advantages of relative Toffoli gates}. In: The Proceedings of SAIP2021 (April 2022)}
 
-\newpage{}
+\entry{2021}{\textbf{Unathi Skosana} and Mark Tame \href{https://doi.org/10.1038/s41598-021-95973-w}{Demonstration of Shor's factoring algorithm for N = 21 on IBM quantum processors}. In: Scientific Reports (August 2021)}
 
-\section*{Public speaking}
+\section*{Awards \& Honors}
 
-\begin{tablist}
-	\item[2025] \tab{}\enquote{Agentic financial security platform with real-time fraud detection and security monitoring} (1st place prize), Hackathon hosted by BET Software \& Otinga [\href{https://github.com/ThamuMnyulwa/bet-hackathon-2025}{see here}]. 17 August
-	\item[2024] \tab{}\enquote{Hyperparameter tuning of variational quantum algorithms}  (1st place prize) South
-		African Institute of Physics (SAIP) [\href{https://github.com/Unathi-Skosana/posters-n-presentations/blob/main/presentations/saip2024/saip2024_final.pdf}{see here}]. 02 August
-	\item[2023]  \tab{} \enquote{Augustus: An AI-powered chatbot fine-tuned for building UX/UI in NextJS 13} (1st place prize), Fintech hackathon hosted by Innovus, Stellenbosch University [\href{https://github.com/Unathi-Skosana/posters-n-presentations/blob/main/presentations/su-innovus-hackathon-2023/export/Augustus-SU-hackathon-presentation.pdf}{see here}]. 08 October
-	\item[2022] \tab{}\enquote{Introduction to Quantum Computing Workshop} South African Institute of Industrial Engineers (SAIIE). 05 October
-	\item[2022] \tab{}\enquote{Introduction to Quantum Computing} South African Institute Electrical Engineers (SAIEE). 30 August
-	\item[2021] \tab{}\enquote{On the advantages of relative phase Toffolis} South
-	African Institute of Physics (SAIP) [\href{https://github.com/Unathi-Skosana/posters-n-presentations/blob/main/posters/saip-2021/release/poster.pdf}{see here}]. \newline 28 July
-	\item[2019] \tab{}\enquote{Modeling of Measurement-based Quantum Computing on
-		IBM Q Experience Devices}  (1st place prize) WitsQ Summer School
-		[\href{https://github.com/Unathi-Skosana/posters-n-presentations/blob/main/posters/witsq-summer-school-2019/release/poster.pdf}{see here}]. 10 Dec
-\end{tablist}
+\entry{2025}{1st Place -- GDG Cape Town \& Google DeepMind Hackathon}
+
+\entry{2025}{1st Place -- BET Software \& Otinga Hackathon}
+
+\entry{2024}{Best Student Presentation -- South African Institute of Physics (SAIP)}
+
+\entry{2023}{1st Place -- Innovus Fintech Hackathon, Stellenbosch University}
+
+\entry{2019}{1st Place -- WitsQ Summer School Poster Competition}
+
+% \section*{Public speaking}
+
+% \entry{2025}{\href{https://github.com/Unathi-Skosana/team-better-health}{Conversational assistant designed to interact with electronic health records} (1st place prize), Hackathon hosted by GDG Cape Town \& Google DeepMind. 25 September}
+
+% \entry{2025}{\href{https://github.com/ThamuMnyulwa/bet-hackathon-2025}{Agentic financial security platform for combating sim-swap fraud} (1st place prize), Hackathon hosted by BET Software \& Otinga. 17 August}
+
+% \entry{2024}{\href{https://github.com/Unathi-Skosana/posters-n-presentations/blob/main/presentations/saip2024/saip2024_final.pdf}{Hyperparameter tuning of variational quantum algorithms}, (1st place prize) South African Institute of Physics (SAIP). 02 August}
+
+% \entry{2023}{\href{https://github.com/Unathi-Skosana/posters-n-presentations/blob/main/presentations/su-innovus-hackathon-2023/export/Augustus-SU-hackathon-presentation.pdf}{Augustus: An AI-powered chatbot fine-tuned for building UX/UI in NextJS 13} (1st place prize), Fintech hackathon hosted by Innovus, Stellenbosch University. 08 October}
+
+% \entry{2022}{{Introduction to Quantum Computing Workshop}, South African Institute of Industrial Engineers (SAIIE). 05 October}
+
+% \entry{2022}{{Introduction to Quantum Computing}, South African Institute Electrical Engineers (SAIEE). 30 August}
+
+% \entry{2021}{\href{https://github.com/Unathi-Skosana/posters-n-presentations/blob/main/posters/saip-2021/release/poster.pdf}{On the advantages of relative phase Toffolis}, South African Institute of Physics (SAIP). 28 July}
+
+\section*{Presentations and Posters}
+
+\entry{2022}{{Introduction to Quantum Computing Workshop}, South African Institute of Industrial Engineers (SAIIE)}
+
+\entry{2022}{{Introduction to Quantum Computing}, South African Institute of Electrical Engineers (SAIEE)}
+
+\entry{2021}{\href{https://github.com/Unathi-Skosana/posters-n-presentations/blob/main/posters/saip-2021/release/poster.pdf}{{On the advantages of relative phase Toffolis}}, South African Institute of Physics (SAIP)}
+
+\entry{2019}{\href{https://github.com/Unathi-Skosana/posters-n-presentations/blob/main/posters/witsq-summer-school-2019/release/poster.pdf}{Modeling of Measurement-based Quantum Computing on IBM Q Experience Devices}, WitsQ Summer School}
+
+% \section*{Projects}
+
+% \entry{2026}{\href{https://github.com/Unathi-Skosana/team-better-health}{Conversational assistant designed to interact with electronic health records}}
+
+% \entry{2025}{\href{https://github.com/ThamuMnyulwa/bet-hackathon-2025}{Agentic financial security platform with real-time fraud detection and security monitoring} }
+
+% \entry{2023}{\href{https://github.com/Unathi-Skosana/augustus}{Augustus: An AI-powered chat assistant fine-tuned for building UX/UI in NextJS 13}}
+
+% \entry{2022}{\href{https://github.com/Unathi-Skosana/hyperentangled-photons-masters-experiment}{Server and client (Flask + React Native) for controlling hyperentangled photonic light source}}
 
 \section*{Projects}
 
-\begin{tablist}
-	\item[2025]\tab{}Agentic financial security platform with real-time fraud detection and security monitoring [\href{https://github.com/ThamuMnyulwa/bet-hackathon-2025}{see here}]
-	\item[2023]\tab{}Augustus: An AI-powered chatbot fine-tuned for building UX/UI in NextJS 13 [\href{https://github.com/Unathi-Skosana/augustus}{see here}]
-	\item[2022]\tab{}Server and client (Flask + React Native) for controlling hyperentangled photonic light source [\href{https://github.com/Unathi-Skosana/hyperentangled-photons-masters-experiment}{see here}]
-\end{tablist}
+\entry{2025}{\href{https://github.com/Unathi-Skosana/team-better-health}{Better-health}
+\begin{itemize}
+  \item AI-powered conversational assistant designed to interact with health records. The assistant enables healthcare professionals and patients to retrieve, interpret, and manage medical data, such as diagnoses, procedures, and patient history, using natural language queries. 
+  \item \textit{Tech: Next.js, PostgreSQL, Gemini API, MedGemma, BlandAI, Vercel AI SDK V5}
+\end{itemize}}
 
-\section*{Miscellaneous}
+\entry{2025}{\href{https://github.com/ThamuMnyulwa/bet-hackathon-2025}{Sentinel}
+\begin{itemize}
+  \item Financial security platform that combines real-time monitoring, AI-powered threat detection, and comprehensive fraud prevention. Built to combat modern financial crimes including SIM swapping attacks.
+  \item \textit{Tech: Next.js, PostgreSQL, OpenAI API, Vercel AI SDK V5}
+\end{itemize}}
 
-\begin{tablist}
-	\item[2022]  \tab{} \href{https://www.credly.com/badges/1572414f-9c43-4bab-909b-be4abf516ae3/public_url}{Qiskit Advocate}, Qiskit
-	\item[2022]  \tab{} \href{https://www.credly.com/badges/055e900b-ec8b-428c-b0aa-854695b17bef/public_url}{IBM Certified Associate Developer}, Quantum Computation using Qiskit v0.2X
-	\item[2022]  \tab{} \href{https://www.credly.com/badges/ca639522-d9e4-412d-be79-95c3a0819c29/public_url}{IBM Quantum Spring Challenge 2022}, Qiskit
-	\item[2022]  \tab{} \href{https://www.credly.com/badges/42753d82-8fcc-4f50-8068-c30cd510c286/public_url}{Qiskit Advocate
-		Mentorship Program Fall 2022}, Qiskit
-	\item[2020]  \tab{}
-	\href{https://www.credly.com/badges/1572414f-9c43-4bab-909b-be4abf516ae3/public_url}{Qiskit
-		Global Summer School 2020}, Qiskit
-\end{tablist}
+\entry{2023}{\href{https://github.com/Unathi-Skosana/augustus}{Augustus}
+\begin{itemize}
+    \item AI-powered coding assistant fine-tuned for generating UX/UI components in Next.js 13 with iterative design interface (similar to what v0.app does now).
+    \item \textit{Tech: Python, Next.js, Vercel AI SDK V2, OpenAI fine-tuning API}
+\end{itemize}}
+
+\entry{2022}{\href{https://github.com/Unathi-Skosana/hyperentangled-photons-masters-experiment}{Quantum photonics control system}
+\begin{itemize}
+    \item Full-stack application with RESTful API backend and mobile app for controlling hyperentangled photonic light source.
+    \item \textit{Tech: Flask, React Native, Python, Thorlabs APT Protocol}
+\end{itemize}}
+\entry{2020}{\href{https://github.com/Unathi-Skosana/gonetkey}{GoNetKey}
+  \begin{itemize}
+  \item Golang reimplementation of Stellenbosch University’s InetKey to authenticate and open campus firewall sessions; includes a command-line client, a D-Bus daemon for automation, and a desktop tray GUI. 
+  \item \textit{Tech: Go, GTK3, AppIndicator, D-Bus (godbus), systray, Fyne}
+\end{itemize}}
+
+\section*{Certifications}
+
+\entry{2022}{\href{https://www.credly.com/badges/1572414f-9c43-4bab-909b-be4abf516ae3/public_url}{Qiskit Advocate}, Qiskit}
+
+\entry{2022}{\href{https://www.credly.com/badges/055e900b-ec8b-428c-b0aa-854695b17bef/public_url}{IBM Certified Associate Developer}, Quantum Computation using Qiskit v0.2X}
+
+\entry{2022}{\href{https://www.credly.com/badges/ca639522-d9e4-412d-be79-95c3a0819c29/public_url}{IBM Quantum Spring Challenge 2022}, Qiskit}
+
+\entry{2022}{\href{https://www.credly.com/badges/42753d82-8fcc-4f50-8068-c30cd510c286/public_url}{Qiskit Advocate Mentorship Program Fall 2022}, Qiskit}
+
+\entry{2020}{\href{https://www.credly.com/badges/1572414f-9c43-4bab-909b-be4abf516ae3/public_url}{Qiskit Global Summer School 2020}, Qiskit}
 
 \end{document}
